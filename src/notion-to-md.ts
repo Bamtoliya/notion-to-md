@@ -350,7 +350,6 @@ export class NotionToMarkdown {
           let blockContent;
           let title: string = type;
 
-          if (type === "video") blockContent = block.video;
           if (type === "file") blockContent = block.file;
           if (type === "pdf") blockContent = block.pdf;
 
