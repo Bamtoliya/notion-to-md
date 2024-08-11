@@ -1,6 +1,6 @@
 {
-  "name": "notion-to-md",
-  "version": "3.1.1",
+  "name": "notion-to-md-jekyll-youtube",
+  "version": "3.1.1.0",
   "engines": {
     "node": ">=12"
   },
