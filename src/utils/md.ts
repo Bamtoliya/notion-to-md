@@ -31,6 +31,10 @@ export const link = (text: string, href: string) => {
   return `[${text}](${href})`;
 };
 
+export const video = (text: string, href: string) => {
+  return `{$ youtube "${href}" $}`
+};
+
 export const codeBlock = (text: string, language?: string) => {
   if (language === "plain text") language = "text";
 

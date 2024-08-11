@@ -317,6 +317,33 @@ export class NotionToMarkdown {
       }
 
       case "video":
+        {
+        let blockContent;
+        let title: string = type;
+
+        if (type === "video") blockContent = block.video;
+
+        const caption = blockContent?.caption
+          .map((item: any) => item.plain_text)
+          .join("");
+
+        if (blockContent) {
+          const file_type = blockContent.type;
+          let link = "";
+
+          if (caption && caption.trim().length > 0) {
+            title = caption;
+          } else if (link) {
+            const matches = link.match(
+              /[^\/\\&\?]+\.\w{3,4}(?=([\?&].*$|$))/
+            );
+            title = matches ? matches[0] : type;
+          }
+
+          return md.video(title, link);
+        }
+      }
+      break;
       case "file":
       case "pdf":
         {
